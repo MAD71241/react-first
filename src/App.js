@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {CardList} from './components/card-list/card-list.component'
+import { CardList } from './components/card-list/card-list.component'
 import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 
@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      monsters: []
+      monsters: [],
+      searchField: "",
     }
   }
 
@@ -21,7 +22,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CardList monsters={this.state.monsters}/>
+        <input type="search" placeholder="search for your kitten" onChange={event => {
+          this.setState({
+            searchField: event.target.value
+          }, () => console.log(searchField));
+        }
+        }
+        />
+        <CardList monsters={this.state.monsters} />
       </div>);
   }
 }
