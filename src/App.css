@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+.App h1 {
+  font-family: 'WindSong', cursive;
+  font-size: 72px;
+  font-weight: lighter;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
